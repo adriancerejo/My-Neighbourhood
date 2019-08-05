@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 50vh;
+    width: 50vh;
+    float: left;
+}
+
+.mapDiv{
+    color:gray;
+    width: 40vh;
+    height: 40vh;
+}
+
+.location {
+    align-items: center;
+    box-sizing: border-box;
+    width: 25vh;
+    margin: 5px;
+}
+
+.search-input {
+    float: left;
+}

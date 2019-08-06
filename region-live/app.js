@@ -1,4 +1,3 @@
-
 let longitude;
 let latitude;
 
@@ -21,7 +20,7 @@ function getLocation(){
 }
 
 function getCoords(inputLoc) {
-    var apikey = 'YOUR_KEY';
+    var apikey = 'YOUR_KEYI';
                         
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
@@ -72,3 +71,46 @@ function initMap(mLat, mLong){
     // add marker to the map
     marker.setLatLng([mLat, mLong]).update();
 }
+
+
+window.addEventListener('load', () =>{
+    let longitude;
+    let latitude;
+
+    let tempC = document.querySelector(".temperature-degree");
+    let desc = document.querySelector(".temperature-description");
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position => {
+            longitude = position.coords.longitude;
+            latitude = position.coords.latitude;
+            console.log(longitude, latitude);
+
+            const heroku = 'https://cors-anywhere.herokuapp.com/';
+            const api = `${heroku}https://api.darksky.net/forecast/YOURKEY/${latitude},${longitude}`
+    
+       
+        fetch(api)
+            .then(response =>{
+              return response.json();  
+            })
+            .then(data =>{
+                const { temperature} = data.currently;
+                const { summary, icon } = data.hourly;
+                tempC.textContent = Math.round((temperature - 32) * (5/9)) + "°C";
+                desc.textContent = summary;
+                setIcons(icon, document.querySelector('.icon'));
+                console.log(data);
+            });
+        });
+    }
+
+
+    function setIcons(icon, iconID){
+        const skycons = new Skycons({color: "black"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play();
+        console.log(icon, iconID);
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
+});

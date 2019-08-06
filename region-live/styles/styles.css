@@ -29,7 +29,7 @@ body {
 }
 
 .map {
-    color: slategrey;
+    color: black;
     width: 80%;
     margin: 15px 0px 0px 32px;
     font-size: 25px;
@@ -43,4 +43,24 @@ body {
 
 .map-location {
     text-align: left;
+}
+
+.weather {
+    min-width: 35%;
+    max-width: 300px;
+    margin: 15px 0px 0px 32px;
+}
+
+.temperature-description{
+    font-size: 18px;
+}
+
+.temperature-icon {
+    
+}
+
+.temperature-degree{
+    font-size: 28px;
+    text-align: left;
+    
 }

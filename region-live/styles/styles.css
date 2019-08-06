@@ -46,8 +46,8 @@ body {
 }
 
 .weather {
-    min-width: 35%;
-    max-width: 300px;
+    min-width: 25%;
+    max-width: 200px;
     margin: 15px 0px 0px 32px;
 }
 
@@ -55,8 +55,9 @@ body {
     font-size: 18px;
 }
 
-.temperature-icon {
-    
+.icon {
+    margin-top: -35px;
+    padding-left: 75px;
 }
 
 .temperature-degree{

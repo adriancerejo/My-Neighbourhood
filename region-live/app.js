@@ -10,6 +10,7 @@ window.addEventListener('load', () =>{
             map = L.map('mapDiv').setView([latitude, longitude], 10);
             marker = L.marker([latitude, longitude]).addTo(map);
             initMap(latitude, longitude);
+            getWeather(latitude, longitude);
         })
     }
 }) 
@@ -20,7 +21,7 @@ function getLocation(){
 }
 
 function getCoords(inputLoc) {
-    var apikey = 'YOUR_KEYI';
+    var apikey = 'YOUR_APIKEY';
                         
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
@@ -40,8 +41,8 @@ function getCoords(inputLoc) {
         var data = JSON.parse(request.responseText);
         latitude = data.results[0].geometry.lat;
         longitude = data.results[0].geometry.lng;
-        console.log(latitude, longitude);
         initMap(latitude, longitude);
+        getWeather(latitude, longitude);
     } else if (request.status <= 500){ 
                             
         console.log("unable to geocode! Response code: " + request.status);
@@ -73,44 +74,31 @@ function initMap(mLat, mLong){
 }
 
 
-window.addEventListener('load', () =>{
-    let longitude;
-    let latitude;
+function getWeather (mLatitude, mLongitude){
 
     let tempC = document.querySelector(".temperature-degree");
     let desc = document.querySelector(".temperature-description");
 
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(position => {
-            longitude = position.coords.longitude;
-            latitude = position.coords.latitude;
-            console.log(longitude, latitude);
+    const heroku = 'https://cors-anywhere.herokuapp.com/';
+    const api = `${heroku}https://api.darksky.net/forecast/YOURAPIKEY/${mLatitude},${mLongitude}`
 
-            const heroku = 'https://cors-anywhere.herokuapp.com/';
-            const api = `${heroku}https://api.darksky.net/forecast/YOURKEY/${latitude},${longitude}`
-    
-       
-        fetch(api)
-            .then(response =>{
-              return response.json();  
-            })
-            .then(data =>{
-                const { temperature} = data.currently;
-                const { summary, icon } = data.hourly;
-                tempC.textContent = Math.round((temperature - 32) * (5/9)) + "°C";
-                desc.textContent = summary;
-                setIcons(icon, document.querySelector('.icon'));
-                console.log(data);
-            });
+    fetch(api)
+        .then(response =>{
+            return response.json();  
+        })
+        .then(data =>{
+            const { temperature} = data.currently;
+            const { summary, icon } = data.hourly;
+            tempC.textContent = Math.round((temperature - 32) * (5/9)) + "°C";
+            desc.textContent = summary;
+            setIcons(icon, document.querySelector('.icon'));
         });
-    }
-
+    
 
     function setIcons(icon, iconID){
         const skycons = new Skycons({color: "black"});
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
-        console.log(icon, iconID);
         return skycons.set(iconID, Skycons[currentIcon]);
     }
-});
+};

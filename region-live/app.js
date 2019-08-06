@@ -3,17 +3,21 @@ let longitude;
 let latitude;
 
 window.addEventListener('load', () =>{
+    document.getElementById('address').value = "";
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
             longitude = position.coords.longitude;
             latitude = position.coords.latitude;
+            map = L.map('mapDiv').setView([latitude, longitude], 10);
+            marker = L.marker([latitude, longitude]).addTo(map);
+            initMap(latitude, longitude);
         })
     }
 }) 
 
 function getLocation(){
-
-    getCoords(document.getElementById('address').value);   
+    getCoords(document.getElementById('address').value);
+    document.getElementById('address').value = "";
 }
 
 function getCoords(inputLoc) {
@@ -59,12 +63,12 @@ function getCoords(inputLoc) {
 
 function initMap(mLat, mLong){
     // initialize map
-    map = L.map('mapDiv').setView([mLat, mLong], 10);
+    map.setView([mLat, mLong], 10);
     // set map tiles source
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
         maxZoom: 18,
     }).addTo(map);
     // add marker to the map
-    marker = L.marker([mLat, mLong]).addTo(map);
+    marker.setLatLng([mLat, mLong]).update();
 }

@@ -13,16 +13,20 @@
 </head>
 <body>
     <div class="location">
-            <input type="textbox" id="address" onfocus="this.value=''" placeholder="Enter Location.." name="search">
-            <button id="submit" type="submit" onclick="getLocation()">Search</button>   
+        <div class="location-search">
+            <input type="textbox" id="address" placeholder="  Enter Location.." name="search">
+            <button id="submit" onclick="getLocation()">Search</button> 
+        </div>  
     </div>
+    <form name="refreshForm">
+            <input type="hidden" name="visited" value="" />
+    </form>
     <div class="map">
-        <p>
-            <div class="map-location">Interactive Map Here:</div>
-            <div id="mapDiv" style="width: 40vh; height: 40vh">
- 
+            <div class="map-location">
+                Map of Location:
+            </div>
+            <div id="mapDiv">
             </div> 
-        </p>
     </div>
 </body>
 </html>

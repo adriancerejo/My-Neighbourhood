@@ -21,7 +21,7 @@ function getLocation(){
 }
 
 function getCoords(inputLoc) {
-    var apikey = 'YOUR_APIKEY';
+    var apikey = 'YOUR_KEY';
                         
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
@@ -80,15 +80,14 @@ function getWeather (mLatitude, mLongitude){
     let desc = document.querySelector(".temperature-description");
 
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/YOURAPIKEY/${mLatitude},${mLongitude}`
+    const api = `${heroku}https://api.darksky.net/forecast/YOUR_KEY/${mLatitude},${mLongitude}`
 
     fetch(api)
         .then(response =>{
             return response.json();  
         })
         .then(data =>{
-            const { temperature} = data.currently;
-            const { summary, icon } = data.hourly;
+            const { temperature , summary, icon } = data.currently;
             tempC.textContent = Math.round((temperature - 32) * (5/9)) + "°C";
             desc.textContent = summary;
             setIcons(icon, document.querySelector('.icon'));

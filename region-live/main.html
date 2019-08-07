@@ -10,33 +10,34 @@
     <script src="app.js"></script>
     <title>Region-Live</title>
 </head>
+<header>
+    <input type="textbox" id="address" placeholder=" Enter Location.." name="search">
+    <button id="submit" onclick="getLocation()">Search</button> 
+</header>
 <body>
-    <div class="location">
-        <div class="location-search">
-            <input type="textbox" id="address" placeholder=" Enter Location.." name="search">
-            <button id="submit" onclick="getLocation()">Search</button> 
-        </div>  
-    </div>
     <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
     </form>
-    <div class="map">
-            <div class="map-location">
-                Map of Location:
-            </div>
+    <div class="boxes-top">
+        <div class="map">
             <div id="mapDiv">
-            </div> 
+            </div>
+        </div>
+        <div class="articles">           
+        </div> 
     </div>
-    <div class="weather">
-        <h2 class="temperature-icon">
-            <h2 class="temperature-degree">          
+    <div class="boxes-bottom">
+        <div class="weather">
+            <h2 class="temperature-icon">
+                <h2 class="temperature-degree"></h2>
+                <div class="temperature-description"></div>
+                <canvas class="icon" width="144" height="144"></canvas>   
             </h2>
-            <canvas class="icon" width="64" height="64"></canvas>   
-        </h2>
-        <div class="temperature-description">
+        </div>
+        <div class="other">
+
         </div>
     </div>
-
 
     <script src="skycons.js"></script>
 </body>

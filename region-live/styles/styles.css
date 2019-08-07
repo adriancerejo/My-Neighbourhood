@@ -9,14 +9,9 @@ body {
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
 }
 
-.location {
-    width: 100%;
-}
-
-.location-search {
-    width: 20%;
-    text-align: center;
-    margin: 15px 0px 15px 0px;
+header {
+    margin-top: 25px;
+    margin-left: 32px;
 }
 
 #address {
@@ -28,40 +23,75 @@ body {
     width: 55px;
 }
 
+.boxes-top {
+    width: 100%;
+    float:left;
+    overflow: hidden;
+}
+
 .map {
-    color: black;
-    width: 80%;
-    margin: 15px 0px 0px 32px;
     font-size: 25px;
+    width: 50%;
+    float:left;
+    overflow: hidden;
+    height: 444px;
+}
+
+.articles {
+    overflow: hidden;
+    height: 444px;
+    border-color: blue;
+    border-width: 5px;
+    border-style: solid;
+    margin-right: 32px;
+
 }
 
 #mapDiv {
-    height: 400px;
-    min-width: 35%;
-    max-width: 300px;
+    height: 444px;
+    max-width: 80%;
+    margin-left: 32px;
+    margin-top: 15px;
+
 }
 
-.map-location {
-    text-align: left;
+.boxes-bottom {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 15px;
+    display:inline-block;
 }
 
 .weather {
-    min-width: 25%;
-    max-width: 200px;
-    margin: 15px 0px 0px 32px;
+    width: 50%;
+    height: 250px;
+    float:left;
+    overflow: hidden;
+    padding-left: 55px;
+    font-family: sans-serif;
+    font-size: 25px;
+    padding-top: 25px;
+
 }
 
 .temperature-description{
-    font-size: 18px;
+    display:inline;
+    vertical-align: top;
 }
 
 .icon {
-    margin-top: -35px;
-    padding-left: 75px;
+    margin-top: -50px;
 }
 
 .temperature-degree{
-    font-size: 28px;
-    text-align: left;
-    
+    vertical-align: top;
+}
+
+.other {
+    overflow: hidden;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    height: 250px;
+    margin-right: 32px;
 }

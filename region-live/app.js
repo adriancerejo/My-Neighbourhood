@@ -23,7 +23,7 @@ function getLocation(){
 
 function getCoords(inputLoc) {
     var apikey = 'XXXXXXXXXXXXXXXXXXXXXXX';
-                        
+            
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
     var request_url = api_url
@@ -43,11 +43,12 @@ function getCoords(inputLoc) {
         latitude = data.results[0].geometry.lat;
         longitude = data.results[0].geometry.lng;
         country = data.results[0].components.country;
+        console.log(data);
         getNews(data.results[0].components["ISO_3166-1_alpha-2"])
         initMap(latitude, longitude);
         getWeather(latitude, longitude);
     } else if (request.status <= 500){ 
-                            
+                
         console.log("unable to geocode! Response code: " + request.status);
         var data = JSON.parse(request.responseText);
         console.log(data.status.message);
@@ -83,7 +84,7 @@ function getWeather (mLatitude, mLongitude){
     let desc = document.querySelector(".temperature-description");
 
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
+    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
 
     fetch(api)
         .then(response =>{
@@ -95,7 +96,7 @@ function getWeather (mLatitude, mLongitude){
             desc.textContent = summary;
             setIcons(icon, document.querySelector('.icon'));
         });
-    
+
 
     function setIcons(icon, iconID){
         const skycons = new Skycons({color: "black"});
@@ -106,7 +107,7 @@ function getWeather (mLatitude, mLongitude){
 };
 
 function getInitialCountry(mLatitude, mLongitude) {
-    var API_KEY = `XXXXXXXXXXXX`
+    var API_KEY = `XXXXXXXXXXXXXXXXXXX`
 
     var request_url = `https://api.opencagedata.com/geocode/v1/json?q=${mLatitude}%2C${mLongitude}&key=${API_KEY}&pretty=1`
     var request = new XMLHttpRequest();
@@ -134,10 +135,32 @@ function getInitialCountry(mLatitude, mLongitude) {
 }
 
 function getNews(mCountry){
-    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXXXXXXXXXXX`;
+    let news1 = document.querySelector(".article1-title");
+    let news2 = document.querySelector(".article2-title");
+    let desc1 = document.querySelector(".article1-desc");
+    let desc2 = document.querySelector(".article2-desc");
+    var url1 = document.getElementById("url1");
+    var url2 = document.getElementById("url2");
+    var img1 = document.getElementById("img1");
+    var img2 = document.getElementById("img2");
+
+
+    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXX`;
     var req = new Request(url);
     fetch(req)
-        .then(function(response) {
-            console.log(response.json());
+    .then(function(response) {
+        return response.json();
     })
+    .then (function(myJson){
+        news1.textContent = myJson.articles[0].title;
+        news2.textContent = myJson.articles[1].title; 
+        desc1.textContent = myJson.articles[0].description; 
+        desc2.textContent = myJson.articles[1].description;           
+        url1.setAttribute('href', myJson.articles[0].url);
+        url2.setAttribute('href', myJson.articles[1].url);
+        img1.src = myJson.articles[0].urlToImage;
+        img2.src = myJson.articles[1].urlToImage;
+
+    })
+
 }

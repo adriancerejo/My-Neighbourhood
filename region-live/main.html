@@ -11,10 +11,12 @@
     <title>Region-Live</title>
 </head>
 <header>
+
     <input type="textbox" id="address" placeholder=" Enter Location.." name="search">
     <button id="submit" onclick="getLocation()">Search</button> 
 </header>
 <body>
+
     <form name="refreshForm">
             <input type="hidden" name="visited" value="" />
     </form>
@@ -23,8 +25,35 @@
             <div id="mapDiv">
             </div>
         </div>
-        <div class="articles">           
-        </div> 
+        <div class="articles">
+            <h1>News</h1>
+        <div class="article1"> 
+            <div class="article1-image-div">
+                <img id="img1" src="" height="135" width="135">
+            </div>
+            <div class="article1-title">
+            </div>
+            <div class="article1-desc">
+            </div>
+            <div class="article1-url">
+                <a id="url1" href="" target="_blank">Click Here To Read</a>
+            </div>
+            
+        </div>
+        <div class="article2"> 
+            <div class="article2-image-div">
+                <img id="img2" src="" height="135" width="135">
+            </div>   
+            <div class="article2-title">
+            </div>      
+            <div class="article2-desc">
+            </div>   
+            <div class="article2-url">
+                <a id="url2" href="url2" target="_blank">Click Here To Read</a>
+            </div>
+            
+        </div>
+    </div>   
     </div>
     <div class="boxes-bottom">
         <div class="weather">
@@ -38,7 +67,6 @@
 
         </div>
     </div>
-
     <script src="skycons.js"></script>
 </body>
 </html>

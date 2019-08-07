@@ -9,6 +9,13 @@ body {
     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
 }
 
+h1{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 34px;
+}
+
 header {
     margin-top: 25px;
     margin-left: 32px;
@@ -40,9 +47,6 @@ header {
 .articles {
     overflow: hidden;
     height: 444px;
-    border-color: blue;
-    border-width: 5px;
-    border-style: solid;
     margin-right: 32px;
 
 }
@@ -80,7 +84,8 @@ header {
 }
 
 .icon {
-    margin-top: -50px;
+    margin-top: -70px;
+    padding-left: 35px;
 }
 
 .temperature-degree{
@@ -94,4 +99,42 @@ header {
     border-style: solid;
     height: 250px;
     margin-right: 32px;
+}
+
+.article1, .article2{
+    padding-top: 15px;
+    height: 33%;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.article1-title, .article2-title{
+    padding-left: 150px;
+    font-weight: bold;
+
+}
+
+.article1-desc, .article2-desc{
+    padding-left: 150px;
+    font-weight: none;
+    padding-top: 15px;
+}
+
+.article1-url, .article2-url{
+    padding-left: 150px;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+a{
+    color: white;
+}
+
+
+.article1-image-div, .article2-image-div {
+    width: 135px;
+    height: 135px;
+    margin-top: 0px;
+    padding-top: 0px;
+    float:left;
 }

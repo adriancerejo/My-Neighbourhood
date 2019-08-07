@@ -22,7 +22,7 @@ function getLocation(){
 }
 
 function getCoords(inputLoc) {
-    var apikey = 'XXXXXXXXXXXXXXXXXXXXXXX';
+    var apikey = 'XXXXXXXXXXXXXXXXXXXXX';
             
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
@@ -84,7 +84,7 @@ function getWeather (mLatitude, mLongitude){
     let desc = document.querySelector(".temperature-description");
 
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
+    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
 
     fetch(api)
         .then(response =>{
@@ -107,7 +107,7 @@ function getWeather (mLatitude, mLongitude){
 };
 
 function getInitialCountry(mLatitude, mLongitude) {
-    var API_KEY = `XXXXXXXXXXXXXXXXXXX`
+    var API_KEY = `XXXXXXXXXXXXXXXX`
 
     var request_url = `https://api.opencagedata.com/geocode/v1/json?q=${mLatitude}%2C${mLongitude}&key=${API_KEY}&pretty=1`
     var request = new XMLHttpRequest();
@@ -144,8 +144,16 @@ function getNews(mCountry){
     var img1 = document.getElementById("img1");
     var img2 = document.getElementById("img2");
 
+    let news3 = document.querySelector(".article3-title");
+    let news4 = document.querySelector(".article4-title");
+    let desc3 = document.querySelector(".article3-desc");
+    let desc4 = document.querySelector(".article4-desc");
+    var url3 = document.getElementById("url3");
+    var url4 = document.getElementById("url4");
+    var img3 = document.getElementById("img3");
+    var img4 = document.getElementById("img4");
 
-    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXX`;
+    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXXXXX`;
     var req = new Request(url);
     fetch(req)
     .then(function(response) {
@@ -160,6 +168,15 @@ function getNews(mCountry){
         url2.setAttribute('href', myJson.articles[1].url);
         img1.src = myJson.articles[0].urlToImage;
         img2.src = myJson.articles[1].urlToImage;
+
+        news3.textContent = myJson.articles[2].title;
+        news4.textContent = myJson.articles[3].title; 
+        desc3.textContent = myJson.articles[2].description; 
+        desc4.textContent = myJson.articles[3].description;           
+        url3.setAttribute('href', myJson.articles[2].url);
+        url4.setAttribute('href', myJson.articles[3].url);
+        img3.src = myJson.articles[2].urlToImage;
+        img4.src = myJson.articles[3].urlToImage;
 
     })
 

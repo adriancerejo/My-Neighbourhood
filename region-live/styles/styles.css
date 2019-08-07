@@ -44,13 +44,6 @@ header {
     height: 444px;
 }
 
-.articles {
-    overflow: hidden;
-    height: 444px;
-    margin-right: 32px;
-
-}
-
 #mapDiv {
     height: 444px;
     max-width: 80%;
@@ -67,14 +60,16 @@ header {
 }
 
 .weather {
-    width: 50%;
-    height: 250px;
+    width: 40%;
+    height: 350px;
     float:left;
     overflow: hidden;
     padding-left: 55px;
     font-family: sans-serif;
     font-size: 25px;
     padding-top: 25px;
+    margin-top: -365px;
+    position:fixed;
 
 }
 
@@ -92,35 +87,32 @@ header {
     vertical-align: top;
 }
 
-.other {
+.articles {
     overflow: hidden;
-    border-color: black;
-    border-width: 5px;
-    border-style: solid;
-    height: 250px;
+    height: 800px;
     margin-right: 32px;
 }
 
-.article1, .article2{
+.article1, .article2, .article3, .article4{
     padding-top: 15px;
-    height: 33%;
+    height: 20%;
     font-size: 18px;
     font-family: sans-serif;
 }
 
-.article1-title, .article2-title{
+.article1-title, .article2-title, .article3-title, .article4-title{
     padding-left: 150px;
     font-weight: bold;
 
 }
 
-.article1-desc, .article2-desc{
+.article1-desc, .article2-desc, .article3-desc, .article4-desc{
     padding-left: 150px;
     font-weight: none;
     padding-top: 15px;
 }
 
-.article1-url, .article2-url{
+.article1-url, .article2-url, .article3-url, .article4-url{
     padding-left: 150px;
     padding-top: 15px;
     font-size: 14px;
@@ -131,7 +123,7 @@ a{
 }
 
 
-.article1-image-div, .article2-image-div {
+.article1-image-div, .article2-image-div, .article3-image-div, .article4-image-div {
     width: 135px;
     height: 135px;
     margin-top: 0px;

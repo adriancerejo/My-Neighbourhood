@@ -16,6 +16,7 @@ Provides information based on user location and allows the user to search other 
 - Currently not responsive
 
 ## Requirements:
+- Location needs to be enabled
 - API Keys from the following:
   - OpenCageData (Map)
   - DarkSky (Weather)

@@ -13,5 +13,15 @@ Provides information based on user location and allows the user to search other 
 - Finding a news api was difficult, however the one I did find only provides national news rather than local news
 - Some news articles do not have an image associated with them resulting in a broken img link
 - News from foreign countries are in their native language (Germany - german, Russian - russian)
+- Currently not responsive
 
 ## Requirements:
+- API Keys from the following:
+  - OpenCageData (Map)
+  - DarkSky (Weather)
+  - NewsAPI
+ 
+## To Add (Maybe):
+- Translation of foreign language into english
+- Fixing temperature values
+- Refactoring code (weather one is messy)

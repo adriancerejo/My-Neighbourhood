@@ -23,4 +23,4 @@ Provides information based on user location and allows the user to search other 
 ## To Add (Maybe):
 - [ ] Translation of foreign language into english
 - [ ] Refactoring code (weather one is messy)
-- [X] Make webpage responsive
+- [X] Make webpage responsive (kind of - I tried my best)

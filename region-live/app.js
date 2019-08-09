@@ -84,36 +84,35 @@ function getWeather (mLatitude, mLongitude){
     let desc = document.querySelector(".temperature-description");
     
     let day1 = document.querySelector(".day1-day");
-    let day1High = document.querySelector(".day1-high");
-    let day1Low = document.querySelector(".day1-low");
+    let day1Info = document.querySelector(".day1-info");
 
     let day2 = document.querySelector(".day2-day");
-    let day2High = document.querySelector(".day2-high");
-    let day2Low = document.querySelector(".day2-low");
+    let day2Info = document.querySelector(".day2-info");
+
     
     let day3 = document.querySelector(".day3-day");
-    let day3High = document.querySelector(".day3-high");
-    let day3Low = document.querySelector(".day3-low");
+    let day3Info = document.querySelector(".day3-info");
+
     
     let day4 = document.querySelector(".day4-day");
-    let day4High = document.querySelector(".day4-high");
-    let day4Low = document.querySelector(".day4-low");
+    let day4Info = document.querySelector(".day4-info");
+
     
     let day5 = document.querySelector(".day5-day");
-    let day5High = document.querySelector(".day5-high");
-    let day5Low = document.querySelector(".day5-low");
+    let day5Info = document.querySelector(".day5-info");
+
     
     let day6 = document.querySelector(".day6-day");
-    let day6High = document.querySelector(".day6-high");
-    let day6Low = document.querySelector(".day6-low");
+    let day6Info = document.querySelector(".day6-info");
+
     
     let day7 = document.querySelector(".day7-day");
-    let day7High = document.querySelector(".day7-high");
-    let day7Low = document.querySelector(".day7-low");
+    let day7Info = document.querySelector(".day7-info");
+
 
 
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
+    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
 
     fetch(api)
         .then(response =>{
@@ -133,29 +132,29 @@ function getWeather (mLatitude, mLongitude){
             tempC.textContent = Math.round((temperature - 32) * (5/9)) + "°C";
             desc.textContent = summary;
 
-            day1High.textContent = "High: " + Math.round((data.daily.data[1].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day1Low.textContent = "Low: " + Math.round((data.daily.data[1].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            day1Info.textContent = "High: " + Math.round((data.daily.data[1].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                     " Low: " + Math.round((data.daily.data[1].apparentTemperatureLow - 32) * (5/9)) + "°C";
 
-            day2High.textContent = "High: " + Math.round((data.daily.data[2].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day2Low.textContent = "Low: " + Math.round((data.daily.data[2].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            day2Info.textContent = "High: " + Math.round((data.daily.data[2].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[2].apparentTemperatureLow - 32) * (5/9)) + "°C";
 
-            day3High.textContent = "High: " + Math.round((data.daily.data[3].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day3Low.textContent = "Low: " + Math.round((data.daily.data[3].apparentTemperatureLow - 32) * (5/9)) + "°C";
-
-            day4High.textContent = "High: " + Math.round((data.daily.data[4].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day4Low.textContent = "Low: " + Math.round((data.daily.data[4].apparentTemperatureLow - 32) * (5/9)) + "°C";
-
-            day5High.textContent = "High: " + Math.round((data.daily.data[5].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day5Low.textContent = "Low: " + Math.round((data.daily.data[5].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            day3Info.textContent = "High: " + Math.round((data.daily.data[3].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[3].apparentTemperatureLow - 32) * (5/9)) + "°C";
             
-            day6High.textContent = "High: " + Math.round((data.daily.data[6].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day6Low.textContent = "Low: " + Math.round((data.daily.data[6].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            day4Info.textContent = "High: " + Math.round((data.daily.data[4].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[4].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            
+            day5Info.textContent = "High: " + Math.round((data.daily.data[5].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[5].apparentTemperatureLow - 32) * (5/9)) + "°C";
 
-            day7High.textContent = "High: " + Math.round((data.daily.data[7].apparentTemperatureHigh - 32) * (5/9)) + "°C";
-            day7Low.textContent = "Low: " + Math.round((data.daily.data[7].apparentTemperatureLow - 32) * (5/9)) + "°C";
+            day6Info.textContent = "High: " + Math.round((data.daily.data[6].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[6].apparentTemperatureLow - 32) * (5/9)) + "°C";
+
+            day7Info.textContent = "High: " + Math.round((data.daily.data[7].apparentTemperatureHigh - 32) * (5/9)) + "°C" + 
+                                    " Low: " + Math.round((data.daily.data[7].apparentTemperatureLow - 32) * (5/9)) + "°C";
 
             
-             var dt = new Date();
+            var dt = new Date();
             daysOfWeek = ["Sunday", "Monday", "Tuesday", 
                         "Wednesday", "Thursday", "Friday", 
                         "Saturday", "Sunday", "Monday", 
@@ -192,7 +191,7 @@ function getWeather (mLatitude, mLongitude){
 };
 
 function getInitialCountry(mLatitude, mLongitude) {
-    var API_KEY = `XXXXXXXXXXXXXXX`
+    var API_KEY = `XXXXXXXXXXXXXXXXXXXXXXXX`
 
     var request_url = `https://api.opencagedata.com/geocode/v1/json?q=${mLatitude}%2C${mLongitude}&key=${API_KEY}&pretty=1`
     var request = new XMLHttpRequest();
@@ -238,7 +237,7 @@ function getNews(mCountry){
     var img3 = document.getElementById("img3");
     var img4 = document.getElementById("img4");
 
-    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXX`;
+    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXXXXXXXXX`;
     var req = new Request(url);
     fetch(req)
     .then(function(response) {

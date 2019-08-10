@@ -1,5 +1,6 @@
 let longitude;
 let latitude;
+var input = document.getElementById("address");
 
 window.addEventListener('load', () =>{
     document.getElementById('address').value = "";
@@ -16,13 +17,22 @@ window.addEventListener('load', () =>{
     }
 }) 
 
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      getCoords(input.value);
+      input.value = '';
+    }
+  }); 
+
 function getLocation(){
     getCoords(document.getElementById('address').value);
     document.getElementById('address').value = "";
 }
 
 function getCoords(inputLoc) {
-    var apikey = 'XXXXXXXXXXXXXXXXX';
+    var apikey = 'XXXXXXXXXXX';
             
     var api_url = 'https://api.opencagedata.com/geocode/v1/json'
 
@@ -112,7 +122,7 @@ function getWeather (mLatitude, mLongitude){
 
 
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
+    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXXXXXXX/${mLatitude},${mLongitude}`
 
     fetch(api)
         .then(response =>{
@@ -191,7 +201,7 @@ function getWeather (mLatitude, mLongitude){
 };
 
 function getInitialCountry(mLatitude, mLongitude) {
-    var API_KEY = `XXXXXXXXXXXXXXXXXXXXXXXX`
+    var API_KEY = `XXXXXXXXXXXXXX`
 
     var request_url = `https://api.opencagedata.com/geocode/v1/json?q=${mLatitude}%2C${mLongitude}&key=${API_KEY}&pretty=1`
     var request = new XMLHttpRequest();
@@ -237,7 +247,7 @@ function getNews(mCountry){
     var img3 = document.getElementById("img3");
     var img4 = document.getElementById("img4");
 
-    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXXXXXXXXX`;
+    var url = `https://newsapi.org/v2/top-headlines?country=${mCountry.toLowerCase()}&apiKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXX`;
     var req = new Request(url);
     fetch(req)
     .then(function(response) {

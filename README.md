@@ -1,4 +1,4 @@
-# Region-Live
+# My-Neighbourhood -- In the process of pushing the React version of the web app
 ## About:
 Provides information based on user location and allows the user to search other places around the world.
 

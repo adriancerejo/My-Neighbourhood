@@ -2,6 +2,14 @@
 ## About:
 Provides information based on user location and allows the user to search other places around the world.
 
+## React Update Checklist:
+- [X] Map
+- [X] News Articles
+- [X] Weather Reports
+- [ ] Weather Animcations (In progress)
+- [ ] Responsive 
+- [ ] Deploy
+
 ## Features:
 - Map of local area
 - Current weather
@@ -19,8 +27,3 @@ Provides information based on user location and allows the user to search other 
   - OpenCageData (Map)
   - DarkSky (Weather)
   - NewsAPI
- 
-## To Add (Maybe):
-- [ ] Translation of foreign language into english - trying this in new react version
-- [ ] Refactoring code (weather one is messy)
-- [X] Make webpage responsive (kind of - I tried my best)

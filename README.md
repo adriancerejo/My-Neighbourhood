@@ -6,7 +6,7 @@ Provides information based on user location and allows the user to search other 
 - [X] Map
 - [X] News Articles
 - [X] Weather Reports
-- [ ] Weather Animcations (In progress)
+- [X] Weather Animations
 - [ ] Responsive 
 - [ ] Deploy
 

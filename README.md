@@ -1,4 +1,4 @@
-# My-Neighbourhood -- In the process of creating the React version of the web app
+# My-Neighbourhood
 ## About:
 Provides information based on user location and allows the user to search other places around the world.
 
@@ -8,7 +8,10 @@ Provides information based on user location and allows the user to search other 
 - [X] Weather Reports
 - [X] Weather Animations
 - [ ] Responsive 
-- [ ] Deploy
+- [X] Deploy
+
+# Next Steps:
+- Add search feature
 
 ## Features:
 - Map of local area

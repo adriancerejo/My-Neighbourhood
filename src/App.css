@@ -1,0 +1,84 @@
+body {
+  background: linear-gradient(to left top, #fbc2eb, #a6c1ee);
+}
+.leaflet-container {
+  width: 50%;
+  height: 700px;
+  border-radius: 10px;
+}
+
+header {
+  text-align: center;
+}
+
+.left-container {
+  width: 50%;
+  float: left;
+}
+
+.article-container {
+  display: flex;
+  justify-content: flex-start;
+  background-color: lightblue;
+  padding: 10px;
+  border: 5px solid lightseagreen;
+  border-radius: 15px;
+  margin: 0 25px 25px 25px;
+}
+
+.article-title {
+  width: 100%;
+  padding: 15px;
+  margin-top: 0px;
+}
+
+.article-desc {
+  padding: 15px;
+}
+
+.article-author {
+  padding: 15px;
+}
+
+.weather {
+  width: 50%;
+  float: right;
+}
+
+.parent-weather {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+}
+.child-weather {
+  padding: 15px;
+  border: 2px solid lightseagreen;
+  border-radius: 15px;
+  height: 175px;
+  margin: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.current-weather {
+  text-align: center;
+}
+
+.current-weather h4 {
+  font-size: 24px;
+}
+
+.current-summary {
+  font-size: 28px;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0;
+}

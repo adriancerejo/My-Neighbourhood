@@ -4,7 +4,7 @@ import Day from './Day';
 
 const Weather = (lat, lng) => {
     const heroku = 'https://cors-anywhere.herokuapp.com/';
-    const api = `${heroku}https://api.darksky.net/forecast/194b1066f875b0257ba37dd180bc934b/${lat.lat},${lat.lng}`
+    const api = `${heroku}https://api.darksky.net/forecast/XXXXXXXXXXX/${lat.lat},${lat.lng}`
 
     const [weather, setWeather] = useState(null);
 

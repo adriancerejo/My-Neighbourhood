@@ -10,7 +10,7 @@ Provides information based on user location and allows the user to search other 
 - [X] News Articles
 - [X] Weather Reports
 - [X] Weather Animations
-- [ ] Responsive 
+- [X]Responsive 
 - [X] Deploy
 
 # Next Steps:

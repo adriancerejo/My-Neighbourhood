@@ -10,7 +10,7 @@ Provides information based on user location and allows the user to search other 
 - [X] News Articles
 - [X] Weather Reports
 - [X] Weather Animations
-- [X]Responsive 
+- [X] Responsive 
 - [X] Deploy
 
 # Next Steps:
@@ -23,9 +23,10 @@ Provides information based on user location and allows the user to search other 
 - News articles
 
 ## Issues:
-- Finding a news api was difficult, however the one I did find only provides national news rather than local news
-- Some news articles do not have an image associated with them resulting in a broken img link
-- News from foreign countries are in their native language (Germany - german, Russian - russian)
+- [ ] Broken news grid and page sometimes doesn't load at all on some devices/certain browsers
+- [ ] Finding a news api was difficult, however the one I did find only provides national news rather than local news - No Fix :anguished:
+- [X] Some news articles do not have an image associated with them resulting in a broken img link - Fix: Added alt
+- [ ] News from foreign countries are in their native language (Germany - german, Russian - russian) - Looking into Google Translate
 
 ## Requirements:
 - Location needs to be enabled
